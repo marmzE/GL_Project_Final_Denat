@@ -3,7 +3,7 @@ package MarmzE_Project.Main;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Test_Lien {
+public class TestLien {
 
 	private Lien l1;
 	private Lien l2;

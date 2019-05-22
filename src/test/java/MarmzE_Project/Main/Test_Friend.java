@@ -21,4 +21,5 @@ private Friend f;
 	public void ConstructionFriend(){	
 		assertEquals(f.getNom(),"friend");
 	}
+	
 }
