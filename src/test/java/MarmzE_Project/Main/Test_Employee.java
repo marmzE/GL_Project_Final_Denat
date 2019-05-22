@@ -18,7 +18,7 @@ private Employee e;
 	
 	
 	@Test
-	public void ConstructionEmployee(){	
+	public void constructionEmployee(){	
 		assertEquals(e.getNom(),"employee");
 	}
 

@@ -5,17 +5,4 @@ import org.junit.Test;
 
 public class TestLien {
 
-	private Lien l1;
-	private Lien l2;
-	
-	@Before
-	public void avant(){
-		this.l1 = new Friend();
-		this.l2 = new Employee();
-	}
-	
-	@Test
-	public void test1(){
-		
-	}
 }
