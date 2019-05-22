@@ -1,0 +1,4 @@
+martin-friend(since=1987)-pierre
+paul-employee(role=research;hired=Oct 08)-arnaud
+martin-paul
+martin-frund(since=1999)-pedro

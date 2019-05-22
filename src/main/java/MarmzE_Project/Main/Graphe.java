@@ -22,7 +22,6 @@ public class Graphe {
 			
 			while(!trouve && i<this.listeNoeud.size()){
 				if(this.listeNoeud.get(i).getNom().equals(parts)){
-					System.out.println("trouvee");
 					trouve=true;
 				}
 				else{

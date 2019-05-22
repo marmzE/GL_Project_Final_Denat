@@ -10,31 +10,16 @@ import java.io.InputStreamReader;
 public class Principale {
 
 	private static Graphe g;
+	private static int nbLigne;
 	
 	public static void main(String [] args){
 		g = new Graphe();
+		nbLigne = 1;
+		lireText();
 		
 	}
 	
 	
-	public static void lireText(){
-		try{
-			InputStream flux=new FileInputStream("test.txt"); 
-			InputStreamReader lecture=new InputStreamReader(flux);
-			BufferedReader buff=new BufferedReader(lecture);
-			String ligne;
-			int nbLigne =1;
-			while ((ligne=buff.readLine())!=null){
-				gestionLigne(ligne,nbLigne);
-			}
-			buff.close(); 
-			}		
-			catch (Exception e){
-			System.out.println(e.toString());
-			}
-	}
-
-
 	private static void gestionLigne(String ligne,int nbligne) {
 		String[] parts = ligne.split("-");
 		if(parts.length == 3){
@@ -66,6 +51,9 @@ public class Principale {
 				case "friend" :
 						lien = new Friend();
 						break;
+				case "employee" :
+					lien = new Employee();
+					break;
 				}		
 				
 				//since=1989,share=[books;movies;tweets]
@@ -98,15 +86,33 @@ public class Principale {
 				nDepart.getListeLien().add(lien);			
 			}	
 			else{
-				System.out.println("ligne "+nbligne+" incorrect");
+				System.out.println("ligne "+nbLigne+" incorrect");
 			}
 		}
 		else{
-			System.out.println("ligne "+nbligne+" incorrect");
+			System.out.println("ligne "+nbLigne+" incorrect");
 		}		
+		nbLigne++;
 		
 	}
 
+
+	public static void lireText(){
+		try{
+			InputStream flux=new FileInputStream("test.txt"); 
+			InputStreamReader lecture=new InputStreamReader(flux);
+			BufferedReader buff=new BufferedReader(lecture);
+			String ligne;
+			int nbLigne =1;
+			while ((ligne=buff.readLine())!=null){
+				gestionLigne(ligne,nbLigne);
+			}
+			buff.close(); 
+			}		
+			catch (Exception e){
+			System.out.println(e.toString());
+			}
+	}
 
 
 	private static boolean VerifLienEtProp(String l) {
@@ -132,12 +138,10 @@ public class Principale {
 						case "friend" :
 								Friend f = new Friend();
 								res = f.verifProp(separationProp[i].split("=")[0]);
-								System.out.println(res);
 								break;
 					}
 				}
 			}	
-			
 		}
 		else{
 			res = false;
