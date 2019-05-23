@@ -10,7 +10,7 @@ public class Test_Friend {
 private Friend f;
 	
 	@Before
-	public void Avant(){
+	public void avant(){
 		this.f = new Friend();
 	}
 	
@@ -18,7 +18,7 @@ private Friend f;
 	
 	
 	@Test
-	public void ConstructionFriend(){	
+	public void constructionFriend(){	
 		assertEquals(f.getNom(),"friend");
 	}
 	
