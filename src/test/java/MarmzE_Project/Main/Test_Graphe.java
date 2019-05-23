@@ -27,8 +27,8 @@ public class Test_Graphe {
 	
 	@Test
 	public void test1RechercheNoeud(){
-		Graphe.getListeNoeud().add(new Noeud("martin"));
-		assertEquals(Graphe.rechercheNoeud("martin"),Graphe.getListeNoeud().get(0));
+		Graphe.getListeNoeud().add(new Noeud("martinS"));
+		assertEquals(Graphe.rechercheNoeud("martinS"),Graphe.getListeNoeud().get(0));
 	}
 	
 	@Test
