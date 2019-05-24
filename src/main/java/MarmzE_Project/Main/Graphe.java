@@ -6,16 +6,20 @@ public class Graphe {
 		private static int nbLigne = 1;
 		private static final String EMPLOYEE="employee";
 		private static final String FRIEND = "friend";
+		private static final String LIKE = "like";
 		
 		public static int getNbLigne() {
 			return nbLigne;
 		}
+
 		public static void setNbLigne(int nbLigne) {
 			Graphe.nbLigne = nbLigne;
 		}
+
 		public Graphe(){
 			listeNoeud = new ArrayList<Noeud>();
 		}
+
 		public static ArrayList<Noeud> getListeNoeud() {
 			return listeNoeud;
 		}
@@ -43,6 +47,22 @@ public class Graphe {
 			
 		}
 		
+		public static boolean rechercheNoeudBoolean(String parts) {
+			boolean trouve = false;
+			int i=0;
+			
+			while(!trouve && i<listeNoeud.size()){
+				if(listeNoeud.get(i).getNom().equals(parts)){
+					trouve=true;
+				}
+				else{
+					i++;
+				}
+			}
+			return trouve;
+			
+		}
+		
 		public static Lien creationLien(String nomLien) {
 			Lien lien;
 			switch (nomLien){
@@ -51,6 +71,9 @@ public class Graphe {
 				break;
 			case EMPLOYEE:
 				lien = new Employee();
+				break;
+			case LIKE:
+				lien = new Like();
 				break;
 			default:
 				lien = null;
@@ -65,7 +88,7 @@ public class Graphe {
 			String[] separation =l.split("\\(");
 			
 			String lien = separation[0];	
-			if(lien.equals(EMPLOYEE) || lien.equals(FRIEND)){
+			if(lien.equals(EMPLOYEE) || lien.equals(FRIEND) || lien.equals(LIKE)){
 				//Lien Verifié
 				
 				String reste = separation[1];
@@ -83,6 +106,10 @@ public class Graphe {
 							case FRIEND :
 									Friend f = new Friend();
 									res = f.verifProp(separationProp[i].split("=")[0]);
+									break;
+							case LIKE :
+									Like li = new Like();
+									res = li.verifProp(separationProp[i].split("=")[0]);
 									break;
 							default:
 								break;

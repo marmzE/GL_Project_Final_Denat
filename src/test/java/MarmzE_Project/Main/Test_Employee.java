@@ -14,9 +14,7 @@ private Employee e;
 		this.e = new Employee();
 	}
 	
-	
-	
-	
+
 	@Test
 	public void constructionEmployee(){	
 		assertEquals(e.getNom(),"employee");

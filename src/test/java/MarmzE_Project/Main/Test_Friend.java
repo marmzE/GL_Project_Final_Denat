@@ -14,9 +14,7 @@ private Friend f;
 		this.f = new Friend();
 	}
 	
-	
-	
-	
+
 	@Test
 	public void constructionFriend(){	
 		assertEquals(f.getNom(),"friend");

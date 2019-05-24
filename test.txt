@@ -1,5 +1,10 @@
 martin-friend(since=1987)-pierre
-paul-employee(role=research;hired=Oct 08)-arnaud
+paul-employee(role=research,hired=Oct 08)-arnaud
 
 martin-paul
 martin-frund(since=1999)-pedro
+
+martin-friend(since=1999)-arnaud
+martin-friend(since=1998)-pedro
+martin-like(date="12/02/2012")-paul
+paul-friend(since=1959)-arnaud
